@@ -1,7 +1,7 @@
 import express, {Request, Response} from "express";
 import cors from "cors";
 const app = express();
-import {Worker} from 'bullmq'
+import {Queue, Worker} from 'bullmq'
 
 import { createClient } from '@supabase/supabase-js'
 
@@ -36,9 +36,11 @@ app.get('/videos', async (_req: Request, res: Response) => {
     })
 })
 
+
 new Worker('url_db', async (job) => {
     console.log("JOB ACTIVATED")
     const jobdata = job.data;
+    console.log(jobdata)
     const {data} = await supabase
       .from("videos")
       .select()
@@ -50,7 +52,6 @@ new Worker('url_db', async (job) => {
       .from("videos")
       .update({ transcoded: currTranscoded })
       .eq("username", jobdata.username);
-
 },{
     connection: {
         host: "redis-1e99ff70-aneeshseth2018-fa67.a.aivencloud.com",

@@ -23,13 +23,13 @@ import { ChangeEvent, ChangeEventHandler, useState } from "react";
 
 AWS.config.update({
   region: 'eu-west-3',
-  accessKeyId: "AKIAW3MEA7T3K7H7IQ5Y",
-  secretAccessKey: "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",
+  accessKeyId: process.env.accessKeyId,
+  secretAccessKey: process.env.secretAccessKey,
 });
 
 const s3 = new AWS.S3({
   apiVersion: '2006-03-01',
-  params: { Bucket: 'final-pt1' },
+  params: { Bucket: process.env.bucket },
 });
 
 export default function CardDemo() {
@@ -56,8 +56,8 @@ export default function CardDemo() {
     try {
 
       const creds = {
-        accessKeyId: "AKIAW3MEA7T3K7H7IQ5Y",
-        secretAccessKey: "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",
+        accessKeyId: process.env.accessKeyId!,
+        secretAccessKey: process.env.secretAccessKey!,
       };
 
       await axios.post('http://localhost:3005/initadd', {
@@ -84,7 +84,7 @@ export default function CardDemo() {
       }
       console.log("/////")
       const thumbnailTarget = {
-        Bucket: "myawsbucketaneesh",
+        Bucket: process.env.awsbucket,
         Key: `${keyToSend}.png`,
         Body: thumbnail,
       };
