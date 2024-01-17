@@ -28,7 +28,7 @@ export default function Home() {
           <Button
             className="bg-transparent text-white bg-black hover:bg-white hover:text-black"
             onClick={() => {
-              router.push("/how");
+              router.push("/build");
             }}
           >
             Start Watching
