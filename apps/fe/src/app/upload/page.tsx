@@ -23,8 +23,8 @@ import { ChangeEvent, ChangeEventHandler, useState } from "react";
 
 AWS.config.update({
   region: 'us-east-1',
-  accessKeyId: process.env.ACCESS_ID!,
-  secretAccessKey: process.env.SECRET_KEY!,
+  accessKeyId: process.env.NEXT_PUBLIC_ACCESS_ID!,
+  secretAccessKey: process.env.NEXT_PUBLIC_SECRET_KEY!,
 });
 
 const s3 = new AWS.S3({
@@ -56,8 +56,8 @@ export default function CardDemo() {
     try {
 
       const creds = {
-        accessKeyId: process.env.ACCESS_ID!,
-        secretAccessKey: process.env.SECRET_KEY!,
+        accessKeyId: process.env.NEXT_PUBLIC_ACCESS_ID!,
+        secretAccessKey: process.env.NEXT_PUBLIC_SECRET_KEY!,
       };
 
       await axios.post('https://watch.aneesh.pro/initadd', {
