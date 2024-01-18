@@ -6,7 +6,7 @@ import {Queue, Worker} from 'bullmq'
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = process.env.SUPABASE_URL!
-const supabaseKey = process.env.SUPABASE_KEY!
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJtYnh5cnhmeHR2cXFibnB5eHBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDM2ODAyNjYsImV4cCI6MjAxOTI1NjI2Nn0.xbyH35lMN0H-IGLpSkuply6jYf01nYw1bV6By5NaQ80"
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 app.use(cors({
@@ -54,10 +54,10 @@ new Worker('url_db', async (job) => {
       .eq("username", jobdata.username);
 },{
     connection: {
-        host: process.env.REDIS_HOST!,
+        host: "redis-1e99ff70-aneeshseth2018-fa67.a.aivencloud.com",
         port: 24980,
         username: "default",
-        password: process.env.REDIS_PASS!,
+        password: "AVNS_g3BWXhFIbfNmsNr-o9K",
     },
     concurrency: 1
 })

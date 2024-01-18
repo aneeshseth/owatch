@@ -54,10 +54,10 @@ new Worker('url_db', async (job) => {
       .eq("username", jobdata.username);
 },{
     connection: {
-        host: process.env.REDIS_HOST!,
+        host: "redis-1e99ff70-aneeshseth2018-fa67.a.aivencloud.com",
         port: 24980,
         username: "default",
-        password: process.env.REDIS_PASS!,
+        password: "AVNS_g3BWXhFIbfNmsNr-o9K",
     },
     concurrency: 1
 })

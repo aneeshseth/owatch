@@ -60,7 +60,7 @@ export default function CardDemo() {
         secretAccessKey: "",
       };
 
-      await axios.post('http://localhost:3005/initadd', {
+      await axios.post('http://ec2-184-72-72-50.compute-1.amazonaws.com:3005/initadd', {
         username: keyToSend,
         thumbnail: `https://myawsbucketaneesh.s3.eu-west-3.amazonaws.com/${keyToSend}.png`
       })

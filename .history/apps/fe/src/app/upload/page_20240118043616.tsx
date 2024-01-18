@@ -23,8 +23,8 @@ import { ChangeEvent, ChangeEventHandler, useState } from "react";
 
 AWS.config.update({
   region: 'us-east-1',
-  accessKeyId: "AKIAW3MEA7T3KQR7STH4",
-  secretAccessKey: "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",
+  accessKeyId: "",
+  secretAccessKey: "",
 });
 
 const s3 = new AWS.S3({
@@ -56,11 +56,11 @@ export default function CardDemo() {
     try {
 
       const creds = {
-        accessKeyId: "AKIAW3MEA7T3KQR7STH4",
-        secretAccessKey: "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",
+        accessKeyId: "",
+        secretAccessKey: "",
       };
 
-      await axios.post('http://localhost:3005/initadd', {
+      await axios.post('ec2-184-72-72-50.compute-1.amazonaws.com:3005/initadd', {
         username: keyToSend,
         thumbnail: `https://myawsbucketaneesh.s3.eu-west-3.amazonaws.com/${keyToSend}.png`
       })

@@ -23,8 +23,8 @@ import { ChangeEvent, ChangeEventHandler, useState } from "react";
 
 AWS.config.update({
   region: 'us-east-1',
-  accessKeyId: process.env.ACCESS_ID!,
-  secretAccessKey: process.env.SECRET_KEY!,
+  accessKeyId: "",
+  secretAccessKey: "",
 });
 
 const s3 = new AWS.S3({
@@ -56,8 +56,8 @@ export default function CardDemo() {
     try {
 
       const creds = {
-        accessKeyId: process.env.ACCESS_ID!,
-        secretAccessKey: process.env.SECRET_KEY!,
+        accessKeyId: process.env.ACCESS_,
+        secretAccessKey: "",
       };
 
       await axios.post('http://ec2-184-72-72-50.compute-1.amazonaws.com:3005/initadd', {
