@@ -86,7 +86,7 @@ export default function Component() {
         >
           <img
             alt="Video thumbnail"
-            className="w-full h-72 object-cover mb-2 rounded-lg"
+            className="w-full h-72 object-cover mb-2 rounded-xl"
             height="200"
             src={video.thumbnail}
             style={{

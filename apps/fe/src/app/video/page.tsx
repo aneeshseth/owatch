@@ -2,6 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 import { vidCurrentState } from '../state/state';
+import './page.css'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -58,7 +59,7 @@ function Video() {
   return (
     <div className="h-screen w-screen bg-[url('https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8d2hpdGUlMjB3YWxscGFwZXJ8ZW58MHx8MHx8fDA%3D')] flex items-center justify-center">
       <div>
-        <div className="ml-5">
+        <div className="ml-5 mr-5">
           <DropdownMenu>
             <DropdownMenuTrigger className='py-1 px-2 rounded-md border-2 border-fuchsia-200'>Quality?</DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -79,7 +80,7 @@ function Video() {
                 </div>
             </DropdownMenuContent>
         </DropdownMenu>
-        <div className="w-3/4 mx-auto mt-4 max-w-[650px] max-h-[650px] min-w-[650px]">
+        <div className="w-3/4 mx-auto mt-4 max-w-[650px] max-h-[650px] video-div-sm">
             <video ref={videoRef} controls className="max-w-full max-h-full border-4 border-emerald-600" autoPlay>
                 <source key={currentVideoPlay} src={currentVideoPlay} type='video/mp4' />
             </video>

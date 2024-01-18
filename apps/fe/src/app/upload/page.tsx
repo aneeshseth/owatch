@@ -22,14 +22,14 @@ import { Input } from "@/components/ui/input";
 import { ChangeEvent, ChangeEventHandler, useState } from "react";
 
 AWS.config.update({
-  region: 'eu-west-3',
-  accessKeyId: process.env.accessKeyId,
-  secretAccessKey: process.env.secretAccessKey,
+  region: 'us-east-1',
+  accessKeyId: "AKIAW3MEA7T3KQR7STH4",
+  secretAccessKey: "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",
 });
 
 const s3 = new AWS.S3({
   apiVersion: '2006-03-01',
-  params: { Bucket: process.env.bucket },
+  params: { Bucket: "final-pt2" },
 });
 
 export default function CardDemo() {
@@ -39,7 +39,7 @@ export default function CardDemo() {
   const [thumbnail, setThumbnail] = useState<File | null>(null);
   const { toast } = useToast()
   const uploadFile = async () => {
-    if (!file || !thumbnail || username == "" || file.type != 'video/mp4' || thumbnail.type != 'image/png') {
+    if (!file || !thumbnail || username == "" || file.type != 'video/mp4' || (thumbnail.type != 'image/png' && thumbnail.type != 'image/jpeg' && thumbnail.type != 'image/jpg')) {
       toast({
         variant: "default",
         title: "please select a thumbnail in PNG and video in MP4/enter a username.",
@@ -56,8 +56,8 @@ export default function CardDemo() {
     try {
 
       const creds = {
-        accessKeyId: process.env.accessKeyId!,
-        secretAccessKey: process.env.secretAccessKey!,
+        accessKeyId: "AKIAW3MEA7T3KQR7STH4",
+        secretAccessKey: "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",
       };
 
       await axios.post('http://localhost:3005/initadd', {
@@ -69,7 +69,7 @@ export default function CardDemo() {
         const params = {
           Key: `${keyToSend}.mp4`,
           Body: file,
-          Bucket: 'final-pt1',
+          Bucket: 'final-pt2',
         };
   
         await s3.upload(params, (err: any, data: any) => {
@@ -84,7 +84,7 @@ export default function CardDemo() {
       }
       console.log("/////")
       const thumbnailTarget = {
-        Bucket: process.env.awsbucket,
+        Bucket: "myawsbucketaneesh",
         Key: `${keyToSend}.png`,
         Body: thumbnail,
       };
