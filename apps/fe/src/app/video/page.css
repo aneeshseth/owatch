@@ -1,6 +1,12 @@
+
+
+
 @media screen and (min-width: 500px) {
     .video-div-sm {
-       min-width: 100%; 
+       min-width: 450px; 
     }
 }
+
+
+
 

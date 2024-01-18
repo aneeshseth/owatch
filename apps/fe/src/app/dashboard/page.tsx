@@ -26,7 +26,7 @@ export default function Component() {
   let [color, setColor] = useState("#841212");
   const [video, setVideo] = useRecoilState(vidState);
   async function fetchData() {
-    const res = await axios.get('http://ec2-184-72-72-50.compute-1.amazonaws.com:3005/videos')
+    const res = await axios.get('https://watch.aneesh.pro/videos')
     const data = await res.data;
     setVideos(data.data)
     setLoading(false)

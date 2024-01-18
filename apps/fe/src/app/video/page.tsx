@@ -80,7 +80,7 @@ function Video() {
                 </div>
             </DropdownMenuContent>
         </DropdownMenu>
-        <div className="w-3/4 mx-auto mt-4 max-w-[650px] max-h-[650px] video-div-sm">
+        <div className="mx-auto mt-4 max-w-[650px] video-div-sm">
             <video ref={videoRef} controls className="max-w-full max-h-full border-4 border-emerald-600" autoPlay>
                 <source key={currentVideoPlay} src={currentVideoPlay} type='video/mp4' />
             </video>
