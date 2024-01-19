@@ -1,4 +1,4 @@
-# OrganicWatch - Youtube's Transcoding Skeleton
+# OrganicWatch - Youtube's Transcoding Skeleton.
 
 
 ## System Architecture:
