@@ -26,7 +26,7 @@ export default function Home() {
             "absolute right-4 top-4 md:right-8 md:top-8"
           )}
         >
-          <img src="https://favicon.twenty.com/github.com" className="h-12" />
+          System Design & Code
         </Link>
         </nav>
         <div className="flex flex-col items-center justify-center mb-10 text-center space-y-8">
