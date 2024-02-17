@@ -73,7 +73,7 @@ export default function Component() {
       <div className="flex flex-1 overflow-hidden">
       <main className="flex-1 p-4 overflow-auto">
   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-    {videos.map((video: VideoType) => (
+    {videos && videos.map((video: VideoType) => (
       video.transcoded.length == 4 && (
         <div
           key={video.id}
